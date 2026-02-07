@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat AI Gemini</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <h1>AI Chat Assistant</h1>
+            </div>
+            <div class="mode-selector">
+                <label for="chat-mode">Mode Chat:</label>
+                <select id="chat-mode">
+                    <option value="standard">Standard (AI Only)</option>
+                    <option value="search">AI + Search (Latest Info)</option>
+                </select>
+            </div>
+        </header>
+
+        <main class="chat-container">
+            <!-- Chat History -->
+            <div class="chat-history" id="chat-history">
+                <div class="welcome-message">
+                    <h2><i class="fas fa-comments"></i> Selamat Datang di AI Chat</h2>
+                    <p>Pilih mode chat dan mulai percakapan dengan AI. Semua percakapan disimpan di browser Anda.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-keyboard"></i>
+                            <span>Kirim pesan teks</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-image"></i>
+                            <span>Upload gambar (jpeg, png)</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-search"></i>
+                            <span>Mode AI + Search untuk info terbaru</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="upload-area">
+                    <label for="image-upload" class="upload-btn">
+                        <i class="fas fa-image"></i>
+                        <span>Upload Gambar</span>
+                    </label>
+                    <input type="file" id="image-upload" accept="image/jpeg, image/png, image/jpg" hidden>
+                    <div id="image-preview" class="image-preview"></div>
+                </div>
+                
+                <div class="message-input">
+                    <textarea 
+                        id="message-input" 
+                        placeholder="Ketik pesan Anda di sini... (Tekan Enter untuk mengirim, Shift+Enter untuk baris baru)"
+                        rows="1"></textarea>
+                    <button id="send-button" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                
+                <div class="info-footer">
+                    <div class="disclaimer">
+                        <i class="fas fa-info-circle"></i>
+                        <span>AI ini didukung oleh Google Gemini API. Percakapan disimpan di browser Anda.</span>
+                    </div>
+                    <button id="clear-history" class="clear-btn">
+                        <i class="fas fa-trash"></i> Hapus Riwayat
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
